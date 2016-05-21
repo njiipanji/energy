@@ -11,6 +11,15 @@
 |
 */
 
+use Illuminate\Http\Request;
+use App\Volunteer;
+
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/registervolunteer', function(){
+	return view('register_volunteer');
+});
+
+Route::post('/registervolunteer', 'VolunteerRegisterCont@insertData');
